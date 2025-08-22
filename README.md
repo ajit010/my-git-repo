@@ -38,7 +38,8 @@ Steps:
 
 2. Clone your fork:
    
-git clone https://github.com/<your-username>/Spoon-Knife.gitcd Spoon-Knife
+git clone https://github.com/<your-username>/Spoon-Knife.git
+cd Spoon-Knife
 
 
 4. Create a branch:
