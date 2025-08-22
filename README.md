@@ -6,17 +6,20 @@ Objective: Configure Git, create repo, and push to GitHub.
 
 Steps:
     
-Configure Git locally:
+1. Configure Git locally:
+   
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 
 
-Create a folder and initialize Git:
+3. Create a folder and initialize Git:
+   
 mkdir git-lab && cd git-lab
 git init
 
 
-Create a file hello.txt, add, commit, and connect to GitHub:
+4. Create a file hello.txt, add, commit, and connect to GitHub:
+   
 echo "Hello Git" > hello.txt
 git add .
 git commit -m "Initial commit"
@@ -30,18 +33,20 @@ Objective: Practice contributing via fork model.
 
 Steps:
 
-Fork a public GitHub repo (e.g., octocat/Spoon-Knife).
+1. Fork a public GitHub repo (e.g., octocat/Spoon-Knife).
 
 
-Clone your fork:
+2. Clone your fork:
+   
 git clone https://github.com/<your-username>/Spoon-Knife.gitcd Spoon-Knife
 
 
-Create a branch:
+4. Create a branch:
+   
 git checkout -b feature-update
 
 
-Add a line in index.html, commit, push:
+5. Add a line in index.html, commit, push:
     
 git add index.html
 git commit -m "Added a new line"
@@ -49,7 +54,7 @@ git push origin feature-update
 
 
 
-Open a Pull Request from your fork → upstream repo.
+6. Open a Pull Request from your fork → upstream repo.
 
 
 **Lab 3: Syncing Fork with Upstream Repo**
@@ -58,20 +63,21 @@ Objective: Keep fork updated with main repo.
 
 Steps:
 
-Add upstream remote:
+1. Add upstream remote:
     
 git remote add upstream https://github.com/octocat/Spoon-Knife.git
 git remote -v
 
 
-Fetch and merge upstream changes:
+2. Fetch and merge upstream changes:
+   
 git fetch upstream
 git checkout main
 git merge upstream/main
 
 
 
-Push updates to your fork:
+3. Push updates to your fork:
     
 git push origin main
 
@@ -82,70 +88,38 @@ Objective: Learn feature branching and resolving conflicts.
 
 Steps:
 
-Create two branches:
+1. Create two branches:
+   
 git checkout -b feature1
 git checkout -b feature2
 
 
 
-In feature1, modify hello.txt line → commit.
+2. In feature1, modify hello.txt line → commit.
 
 
-In feature2, modify the same line → commit.
+3. In feature2, modify the same line → commit.
 
 
-Merge feature2 into main, then try merging feature1 → conflict occurs.
+4. Merge feature2 into main, then try merging feature1 → conflict occurs.
 
 
-Resolve conflict manually in hello.txt, mark resolved:
+5. Resolve conflict manually in hello.txt, mark resolved:
+   
 git add hello.txt
 git commit
 
 
 
-Try rebasing feature1 on top of main:
+7. Try rebasing feature1 on top of main:
+   
 git checkout feature1
 git rebase main
 
 
 
-Lab 5: Working Across Multiple Connected Repos
-
-Objective: Simulate real-world multi-repo development (API + UI + Infra).
-
-Steps:
-
-Create 3 GitHub repos:
-sample-api
-sample-ui
-sample-infra
-
-
-
-Clone all three locally.
-
-
-Create a branch in each repo:
-git checkout -b feature-login
-
-
-Make small linked changes:
-
-API → add login() function in app.py.
-UI → update login.html.
-Infra → add login.yaml to CF templates.
-
-
-Commit & push each branch.
-
-
-Open 3 linked PRs and reference them (e.g., "Depends on sample-api#12").
-
-
 **Lab 4: Branching, Rebasing & Conflict Resolution**
 
-Objective:
-Learn how branching works, what happens when two developers modify the same file, and how to resolve merge conflicts + use rebase.
 
 Setup:
 
